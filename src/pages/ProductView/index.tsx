@@ -10,22 +10,28 @@ const ProductView = () => {
   }
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>{product.name}</h1>
-      <img
-        src={product.imageUrl}
-        alt={product.name}
-        style={{ width: "300px", height: "300px", objectFit: "cover" }}
-      />
-      <p>{product.description}</p>
-      <h2>₱{product.price}</h2>
-
-      <button
-        className="btn btn-primary mt-3"
-        onClick={() => alert("Add to cart clicked!")}
-      >
-        Add to Cart
-      </button>
+    <div className="container py-5">
+      <div className="row">
+        <div className="col-md-6">
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className="img-fluid" // Bootstrap class for responsive image
+            style={{ objectFit: "cover", maxHeight: "300px", width: "100%" }}
+          />
+        </div>
+        <div className="col-md-6">
+          <h1>{product.name}</h1>
+          <p>{product.description}</p>
+          <h2>₱{product.price}</h2>
+          <button
+            className="btn btn-primary mt-3"
+            onClick={() => alert("Add to cart clicked!")}
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
